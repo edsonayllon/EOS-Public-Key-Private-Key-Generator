@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eosjs-ecc": "^4.0.4",
     "expo": "^30.0.1",
     "react": "^16.6.0",
     "react-art": "^16.6.0",
