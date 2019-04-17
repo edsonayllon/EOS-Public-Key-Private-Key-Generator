@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import ecc from 'eosjs-ecc';
 import Button from './components/Button';
 import KeyPairing from './components/KeyPairing';
 
