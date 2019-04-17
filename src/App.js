@@ -24,15 +24,21 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style = {{fontSize: 20, padding: 20}}>EOS Pulic Key Private Key Generation</Text>
+        <Text style = {{fontSize: 20, padding: 20}}>
+          EOS Pulic Key Private Key Generation
+        </Text>
         <Button
           title='Generate Key Pairing'
           onPress={this.generateKeyPairing}
          />
         { this.state.loaded ? (
             <View>
-              <Text style={{ marginBottom: 12, marginTop: 12}}>Public Key: {this.state.publicKey}</Text>
-              <Text>Private Key: {this.state.privateKey}</Text>
+              <Text style={{ marginBottom: 12, marginTop: 12}}>
+                Public Key: {this.state.publicKey}
+              </Text>
+              <Text>
+                Private Key: {this.state.privateKey}
+              </Text>
             </View>
           ) : null
         }
