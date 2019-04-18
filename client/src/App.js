@@ -7,7 +7,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style = {{fontSize: 20, padding: 20}}>
+        <Text style = {{fontSize: 20, marginBottom: 20}}>
           EOS Public Key Private Key Generation
         </Text>
         <KeyPairing />
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 20
   },
   image: {
     width: 100,
