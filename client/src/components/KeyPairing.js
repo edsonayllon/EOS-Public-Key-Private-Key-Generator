@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import ecc from 'eosjs-ecc';
-import { Keystore, Keygen } from 'eosjs-keygen';
 import Button from './Button';
+import config from '../config';
 
 export default class App extends React.Component {
   state = {
@@ -12,19 +11,30 @@ export default class App extends React.Component {
   }
 
   generateKeyPairing = async () => {
-    var keys = await Keygen.generateMasterKeys();
-    console.log(keys)
-    this.setState({
-      loaded: true,
-      owner: {
-        private: keys.privateKeys.owner,
-        public: keys.publicKeys.owner
-      },
-      active: {
-        private: keys.privateKeys.active,
-        public: keys.publicKeys.active
-      }
-    })
+    try {
+      const res = await fetch(`${config.API_ADDR}/api/keygen`, {
+        method: "GET"
+      });
+
+      console.log(res);
+
+      var keys = await res.json();
+      console.log(keys)
+      this.setState({
+        loaded: true,
+        owner: {
+          private: keys.privateKeys.owner,
+          public: keys.publicKeys.owner
+        },
+        active: {
+          private: keys.privateKeys.active,
+          public: keys.publicKeys.active
+        }
+      })
+    } catch (err) {
+      console.log(err)
+    }
+
   }
 
   render() {

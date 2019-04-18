@@ -7,6 +7,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users.route');
+const keygenRouter = require('./routes/keygen.route');
 
 const app = express();
 
@@ -32,7 +33,8 @@ if (app.get('env') === 'production') {
 
 // Routes
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/keygen', keygenRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
