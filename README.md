@@ -6,7 +6,7 @@ Generates public key, private key pairings for EOS. Uses React, React Native and
 
 ![web](webscreen.png)
 
-![mobile](mobilescreen.png)
+![mobile](mobilescreen.gif)
 
 ## 2 | Getting Started
 
